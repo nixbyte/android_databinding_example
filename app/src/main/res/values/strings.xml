@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Pontiac GTO 69</string>
+    <string name="car_description">Этот мускулкар внушителен по всем параметрам, 402 куб. дюйма это вполне нормальный объем(для американской то классики) Pontiac самые красивые авто в те времена делали, ну нынешние модели мне вовсе не интересны. Лучшим брендом его назвать не могу.. Но он определенно один из таких. Мне кинофильм Sex Drive понравился, главное GTO Judge там далеко не в третьих ролях;)</string>
+    <string name="car_speed">213</string>
+    <string name="car_acceleration">5.2</string>
+    <string name="car_power">366</string>
+    <string name="car_density_power">230</string>
+    <string name="car_capacity">6.5</string>
+    <string name="car_weight">1593</string>
+
+    <string name="Speed_Format">%s км/ч</string>
+    <string name="Acceleration_Format">%s cек</string>
+    <string name="Power_Format">%s  л.с.</string>
+    <string name="Density_Format">%s л.с./т</string>
+    <string name="Capacity_Format">%s л.</string>
+    <string name="Weight_Format">%s кг</string>
+</resources>
