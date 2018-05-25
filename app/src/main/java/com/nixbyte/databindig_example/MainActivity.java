@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.nixbyte.databindig_example.databinding.ActivityMainBinding;
 
@@ -28,11 +29,25 @@ public class MainActivity extends AppCompatActivity {
 
         binding.setCar(car);
 
+        final RunInNewThread carChanger = new RunInNewThread(getApplicationContext(),car);
+        final Thread thread = new Thread(carChanger);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(thread.isAlive())
+                    thread.interrupt();
+                else
+                    thread.start();
+            }
+        });
+
+
+
         loadCar();
 
-        RunInNewThread carChanger = new RunInNewThread(getApplicationContext(),car);
 
-        new Thread(carChanger).start();
+        thread.start();
     }
 
     private void loadCar() {

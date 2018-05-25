@@ -27,27 +27,29 @@ public class RunInNewThread implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
-            try {
-                Thread.sleep(3000);
+        try {
+            while (!Thread.currentThread().isInterrupted()) {
 
-                if(rate == null)
-                    rate = true;
-                else
-                    rate = null;
+                    Thread.sleep(3000);
 
-                car.put("carDescription",descriptions[new Random().nextInt(3)+1]);
-                car.put("carImage", context.getResources().getDrawable(images.getResourceId(new Random().nextInt(2)+1,R.drawable.image)));
-                car.put("carSpeed",new Random().nextInt(213) + 60);
-                car.put("carAcceleration",new Random().nextFloat());
-                car.put("carPower",new Random().nextInt(366) + 100);
-                car.put("carDensityPower",new Random().nextInt(230) + 100);
-                car.put("carCapacity",new Random().nextFloat());
-                car.put("carWeight",new Random().nextInt(1593) + 600);
-                car.put("carRate",rate);
-            }catch (InterruptedException e){
-                e.printStackTrace();
+                    if(rate == null)
+                        rate = true;
+                    else
+                        rate = null;
+
+                    car.put("carDescription",descriptions[new Random().nextInt(3)+1]);
+                    car.put("carImage", context.getResources().getDrawable(images.getResourceId(new Random().nextInt(2)+1,R.drawable.image)));
+                    car.put("carSpeed",new Random().nextInt(213) + 60);
+                    car.put("carAcceleration",new Random().nextFloat());
+                    car.put("carPower",new Random().nextInt(366) + 100);
+                    car.put("carDensityPower",new Random().nextInt(230) + 100);
+                    car.put("carCapacity",new Random().nextFloat());
+                    car.put("carWeight",new Random().nextInt(1593) + 600);
+                    car.put("carRate",rate);
+
             }
+        }catch (InterruptedException e){
+            e.printStackTrace();
         }
     }
 }
