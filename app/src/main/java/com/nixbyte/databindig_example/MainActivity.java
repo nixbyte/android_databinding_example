@@ -29,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
         binding.setCar(car);
 
         loadCar();
+
+        RunInNewThread carChanger = new RunInNewThread(getApplicationContext(),car);
+
+        new Thread(carChanger).start();
     }
 
     private void loadCar() {
@@ -41,14 +45,4 @@ public class MainActivity extends AppCompatActivity {
         car.put("carCapacity",getString(R.string.car_capacity));
         car.put("carWeight",getString(R.string.car_weight));
     }
-
-    private void changeCarDescription(String description) {
-        car.put("carDescription",description);
-    }
-
-    private void changeCarImage(Drawable drawable) {
-        car.put("carImage",drawable);
-    }
-
-
 }
