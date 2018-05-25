@@ -16,7 +16,7 @@ public class RunInNewThread implements Runnable {
     private TypedArray images;
     private String[]  descriptions;
     private Context context;
-    private static Boolean rate = null;
+    private Boolean rate = null;
 
     public RunInNewThread(Context context, Map car) {
         this.context = context;
